@@ -5,12 +5,12 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.services.FilterRecomendation;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
+        Filme meuFilme = new Filme("The GodFather", 1972);
 
-        meuFilme.setNome("The GodFather");
-        meuFilme.setAnoDeLancamento(1972);
         meuFilme.setDuracaoEmMinutos(175);
         meuFilme.exibeFichaTecnica();
         meuFilme.avaliaFilme(5.7);
@@ -19,10 +19,8 @@ public class Principal {
         System.out.println("Total de Avaliacões: " + meuFilme.getTotalDeAvaliacoes());
         System.out.printf("Media das Avaliações: %.2f", meuFilme.getMedia());
 
-        Serie sonsOfAnarchy = new Serie();
+        Serie sonsOfAnarchy = new Serie("Sons of Anarchy", 2008);
 
-        sonsOfAnarchy.setNome("Sons of Anarchy");
-        sonsOfAnarchy.setAnoDeLancamento(2008);
         sonsOfAnarchy.exibeFichaTecnica();
         sonsOfAnarchy.setTemporadas(7);
         sonsOfAnarchy.setEpisodiosPorTemporadas(13);
@@ -30,10 +28,8 @@ public class Principal {
         System.out.println("Duração total em minutos: " + sonsOfAnarchy.getDuracaoEmMinutos());
 
 
-        Filme outroFilme = new Filme();
+        Filme outroFilme = new Filme("Schindler's List", 1993);
 
-        outroFilme.setNome("Schindler's List");
-        outroFilme.setAnoDeLancamento(1993);
         outroFilme.setDuracaoEmMinutos(195);
 
 
@@ -53,5 +49,13 @@ public class Principal {
         episode.setSerie(sonsOfAnarchy);
         episode.setTotalViews(300);
         filter.filters(episode);
+
+        ArrayList<Filme> filmeArrayList = new ArrayList<>();
+        filmeArrayList.add(meuFilme);
+        filmeArrayList.add(outroFilme);
+        System.out.println("Tamanho do Array: " + filmeArrayList.size());
+        System.out.println(filmeArrayList);
+        System.out.println(filmeArrayList.get(0).toString());
+
     }
 }
