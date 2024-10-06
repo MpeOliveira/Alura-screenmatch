@@ -57,7 +57,7 @@ public class Titulo {
 
     }
 
-    public void avaliaFilme(double nota) {
+    public void rateTitles(double nota) {
         somaAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
