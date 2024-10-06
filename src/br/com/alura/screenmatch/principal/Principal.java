@@ -1,5 +1,6 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
-import br.com.alura.screenmatch.calculos.Rating;
 import br.com.alura.screenmatch.modelos.Episodes;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
@@ -13,9 +14,9 @@ public class Principal {
 
         meuFilme.setDuracaoEmMinutos(175);
         meuFilme.exibeFichaTecnica();
-        meuFilme.avaliaFilme(5.7);
-        meuFilme.avaliaFilme(10);
-        meuFilme.avaliaFilme(8);
+        meuFilme.rateTitles(5.7);
+        meuFilme.rateTitles(10);
+        meuFilme.rateTitles(8);
         System.out.println("Total de Avaliacões: " + meuFilme.getTotalDeAvaliacoes());
         System.out.printf("Media das Avaliações: %.2f", meuFilme.getMedia());
 
